@@ -1,7 +1,8 @@
 var expect = require('chai').expect;
-var getPrices = require('../src/shop-tools').getPrices;
+var countArticles = require('../src/shop-tools').countArticles;
 describe('Given fruits !', function() {
+    const products = [ 'tomato', 'cucumber', 'tomato', 'salad', 'potato', 'cucumber', 'potato', 'potato', 'tomato', 'potato' ];
     it('obj in obj', function() {
-        expect(getPrices()).to.eql({banana: 1, potato: 2, tomato: 3, cucumber: 4, salad: 5, apple: 6});
+        expect(countArticles(products)).to.eql([ 'tomato', 'cucumber', 'tomato', 'salad', 'potato', 'cucumber', 'potato', 'potato', 'tomato', 'potato' ]);
     })
 });
